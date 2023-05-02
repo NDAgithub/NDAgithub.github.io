@@ -1,0 +1,30 @@
+body {
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Aboreto', cursive;
+}
+
+.topText {
+    justify-content: center;
+    max-width: 90%;
+    text-align: center;
+}
+
+.imageGrid {
+    display: block;
+    justify-content: center;
+    border: 2px solid white;
+    max-width: 80%;
+    max-height: 50%;
+    margin-top: 10px;
+}
+
+.imageLine {
+    display:flow-root;
+}
+
+.imageSquare {
+    margin: 10px;
+}
