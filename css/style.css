@@ -8,6 +8,11 @@ body {
     color: rgb(230, 230, 230);
     flex-direction: column;
     font-family: 'Dai Banna SIL', serif;
+    --shadow-color: #383838;
+}
+
+hr {
+    width: 100%;
 }
 
 #bubbles {
@@ -66,6 +71,7 @@ body {
 .topImgContainer {
     display: flex;
     border: 3px solid white;
+    box-shadow: 2px 2px var(--shadow-color);
 }
 
 #bioImg {
@@ -93,7 +99,8 @@ body {
     max-width: 400px;
     margin: auto;
     align-items: center;
-    padding-right: 8px;
+    padding: 10px 20px 10px 10px;
+    box-shadow: 2px 2px var(--shadow-color);
 }
 
 .contactBox:hover {
@@ -110,11 +117,11 @@ body {
 
 #contactIcon {
     display: flex;
-    width: 82px;
-    height: 82px;
+    width: 60px;
+    height: 60px;
     margin-top: auto;
     margin-bottom: auto;
-    margin-left: 2.5%;
+    margin-right: 10px;
 }
 
 #contactText {
@@ -197,7 +204,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 25px;
-    padding: 0 4px
+    padding: 0px 15px 0px 15px;
+    box-shadow: 2px 2px var(--shadow-color);
 }
 
 .projectLinkBox:hover {
@@ -221,6 +229,7 @@ img[class^='projectImg'] {
     max-height: 350px;
     margin: 0 10px;
     border: 3px solid white;
+    box-shadow: 2px 2px var(--shadow-color);
 }
 
 /* Arrows */
