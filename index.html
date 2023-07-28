@@ -1,30 +1,249 @@
 <!DOCTYPE html>
 
+<!-- NDA, last edit: July 28 2023-->
+
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
-        <title>Four Horsemen Improv</title>
-        <style>@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');</style>
+        <title>Noah Davis-Abraham</title>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Dai+Banna+SIL:wght@500&display=swap');</style>
     </head>
 
-    <body>
-        <!-- TOP TEXT -->
-        <div class="topText">
-            <p style="font-size: 4rem">Four Horsemen Improv</p>
-            <p style="font-size: 1.5rem">An improv comedy group based out of St. John's, Newfoundland</p>
+    <body onload="init()" id="bubbles" onscroll="bg_parallax()">
+        <!-- JAVASCRIPT IMPORT -->
+        <script src="js/index.js"></script>
+        
+        <!-- TOP CONTAINER -->
+        <div class="topContainer">
+            <!-- LEFT CONTAINER -->
+            <div class="leftContainer">
+                <!-- NAME TEXT -->
+                <p id="nameText">Noah Davis-Abraham</p>
+                <!-- BIO TEXT -->
+                <div class="bioContainer">
+                    <p class="bioText">
+                        Hi! I'm Noah, and in 2023 I graduated from Memorial University of Newfoundland and Labrador's Computer Science program, specializing in Visual Computing and Games. 
+                    </p>
+                    <p class="bioText">  
+                        I’ve always wanted to create video games, since I grew up playing and sharing them with my friends and family. Eventually I want to make games that create the same 
+                        feelings I felt while playing Omori, Firewatch, Eastward, Return of the Obra Dinn and Undertale. Recently, myself and a team of 8 friends have put our dreams into 
+                        motion and have started developing our first RPG together in Unity. 
+                    </p>
+                    <p class="bioText">
+                        For the last decade I have done improvisational theatre and comedy, which has helped me to grow as both a good communicator and a compelling storyteller. My experience
+                        has helped me understand games from player and programmer perspectives, and I’m excited to bring this knowledge into my future projects!
+                    </p>
+                </div>
+            </div>
+            <!-- RIGHT CONTAINER -->
+            <div class="rightContainer">
+                <!-- BIO IMAGE CONTAINER -->
+                <div class="topImgContainer">
+                    <img id="bioImg" src="resources/croppedPortrait.jpeg"></img>
+                </div>
+                <!-- CONTACTS CONTAINER -->
+                <div class="contactsContainer">
+                    <p id="contactMeText">Contact me!</p>
+                    <!-- CONTACTBOX CONTAINER -->
+                    <div class="contactBoxContainer">
+                        <!-- LINKEDIN BOX -->
+                        <div class="contactBox" onclick="location.href='https://www.linkedin.com/in/noah-davis-abraham-9a3680266/';">
+                            <img id="contactIcon" src="resources/ICONS/linkedin.png"> </img>
+                            <p id="contactText">LinkedIn</p>
+                        </div>
+                        <!-- EMAIL BOX -->
+                        <div class="contactBox" onclick="location.href='mailto:noahdavisa@gmail.com';">
+                            <img id="contactIcon" src="resources/ICONS/email.png"> </img>
+                            <p id="contactText">Email</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- IMAGE GRID -->
-        <div class="imageGrid">
-            <!-- IMAGE LINE COMPRISED OF TOP TWO IMAGE SQUARES-->
-            <div class="imageLine">
-                <img class="imageSquare" id="Elizabeth Glenn" src="" ></div>
-                <img class="imageSquare" id="Adam Strong" src="resources/bw_adam-removebg-preview.png" ></div>
+        <!-- PROJECT CONTAINER -->
+        <div class="projectContainer">
+            <div class="projectHeaderBox">
+                <p id="projectHeaderText">Check out some of my projects!</p>
             </div>
-            <!-- IMAGE LINE COMPRISED OF BOTTOM TWO IMAGE SQUARES-->
-            <div class="imageLine">
-                <img class="imageSquare" id="Matthew Roome" src="" ></div>
-                <img class="imageSquare" id="Noah Davis-Abraham" src="" ></div>
+            <!-- HAVE YOU SEEN KENT -->
+            <div class="projectBox" id="kent">
+                <!-- TITLE AND SUBTILE -->
+                <div class="projectTitleContainer">
+                    <p id="projectTitleText">Have You Seen Kent?</p>
+                    <p id="projectSubtitleText">COMP4300 - Introduction to Game Programming Final Project</p>
+                </div>
+                <!-- PROJECT BODY -->
+                <div class="projectBodyContainer">
+                    <!-- IMAGE AREA -->
+                    <div class="projectLeftContainer">
+                        <div class="arrowLeft" onclick="backward('kent')"></div>
+                        <img class="projectImg" src="resources/kent/0.png"></img>
+                        <div class="arrowRight" onclick="forward('kent')"></div>
+                    </div>
+                    <!-- TEXT AREA -->
+                    <div class="projectRightContainer">
+                        <p id="projectDescriptionText">
+                            Have You Seen Kent? is a game that was made using only C++ and the SFML library for 
+                    the final project of Memorial University's COMP4300 class. Myself, Andrew Harris, Collin Riggs and Justin Butler
+                    worked on the game together to build the systems for physics (collision, ray casting, overlap), AI pathfinding, 
+                    inventories, shops, item usage, saving and loading game states and rooms, options, lighting effects, and an 
+                    in-game level editor. A trailer and a video presentation which showcases the full range of details in the game
+                    are viewable below. 
+                        </p>
+                        <!-- LINK BOXES -->
+                        <div class="projectLinkContainer">
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=KsdcSsidYqA'">
+                                <p id="projectLinkText">Trailer</p>
+                            </div>
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=n9SQdKeiONs'">
+                                <p id="projectLinkText">Presentation Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- GDMC COMPETITION -->
+            <div class="projectBox" id="gdmc">
+                <!-- TITLE AND SUBTILE -->
+                <div class="projectTitleContainer">
+                    <p id="projectTitleText">GDMC Competition 2022 Submission</p>
+                    <p id="projectSubtitleText">COMP4303 - Artificial Intelligence in Computer Games Final Project</p>
+                </div>
+                <!-- PROJECT BODY -->
+                <div class="projectBodyContainer">
+                    <!-- IMAGE AREA -->
+                    <div class="projectLeftContainer">
+                        <div class="arrowLeft" onclick="backward('gdmc')"></div>
+                        <img class="projectImg" src="resources/gdmc/0.png"></img>
+                        <div class="arrowRight" onclick="forward('gdmc')"></div>
+                    </div>
+                    <!-- TEXT AREA -->
+                    <div class="projectRightContainer">
+                        <p id="projectDescriptionText">
+                            The Generative Design in Minecraft (GDMC) Competition is an annual competition in 
+                    which participants create programs to generate unique Minecraft settlements. For this project, I created a 
+                    Python program that used an HTTP server mod to introduce ocean and desert villages to the game. I used a 2D 
+                    representation of the world’s surface to determine reasonable house locations before building houses modularly,
+                     with their sizes based on their surrounding area. Houses were connected to nearby houses with BFS pathfinding.
+                     A trailer and video essay are viewable below.
+                        </p>
+                        <!-- LINK BOXES -->
+                        <div class="projectLinkContainer">
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=mQf4NALgia8'">
+                                <p id="projectLinkText">Trailer</p>
+                            </div>
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=0QGZ-EddgDA'">
+                                <p id="projectLinkText">Presentation Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- YUWANNA FIGHT -->
+            <div class="projectBox" id="yufi">
+                <!-- TITLE AND SUBTILE -->
+                <div class="projectTitleContainer">
+                    <p id="projectTitleText">Yuwanna Fight</p>
+                    <p id="projectSubtitleText">COMP3100 - Web Programming Final Project</p>
+                </div>
+                <!-- PROJECT BODY -->
+                <div class="projectBodyContainer">
+                    <!-- IMAGE AREA -->
+                    <div class="projectLeftContainer">
+                        <div class="arrowLeft" onclick="backward('yufi')"></div>
+                        <img class="projectImg" src="resources/yufi/0.png"></img>
+                        <div class="arrowRight" onclick="forward('yufi')"></div>
+                    </div>
+                    <!-- TEXT AREA -->
+                    <div class="projectRightContainer">
+                        <p id="projectDescriptionText">
+                            Yuwanna Fight is a game developed by myself and Collin Riggs as our final project for 
+                    Memorial University’s Web Programming course. We utilized EJS to supplement HTML code while building the screens of
+                     our game, and used a RESTful API alongside node.js modules to transfer the game’s information between files. A 
+                     user database was implemented using MongoDB, and users were registered using a custom authentication system. A 
+                     video presentation demonstrating the results is viewable below.
+                        </p>
+                        <!-- LINK BOXES -->
+                        <div class="projectLinkContainer">
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=JY53HfJP564'">
+                                <p id="projectLinkText">Presentation Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HAND RECOGNITION -->
+            <div class="projectBox" id="hand">
+                <!-- TITLE AND SUBTILE -->
+                <div class="projectTitleContainer">
+                    <p id="projectTitleText">Hand-Recognition Program</p>
+                    <p id="projectSubtitleText">COMP4301 - Computer Vision Final Project</p>
+                </div>
+                <!-- PROJECT BODY -->
+                <div class="projectBodyContainer">
+                    <!-- IMAGE AREA -->
+                    <div class="projectLeftContainer">
+                        <div class="arrowLeft" onclick="backward('hand')"></div>
+                        <img class="projectImg" src="resources/hand/0.png"></img>
+                        <div class="arrowRight" onclick="forward('hand')"></div>
+                    </div>
+                    <!-- TEXT AREA -->
+                    <div class="projectRightContainer">
+                        <p id="projectDescriptionText">
+                            For our final project in Memorial’s Computer Vision course, Collin Riggs, Justin Butler
+                     and myself created a Python program that uses a neural network to recognize hand gestures from a camera input to 
+                     perform system commands, such as playing/pausing media. OpenCV, MediaPipe, TensorFlow, scikit-learn and other 
+                     ibraries were used in the creation of this project, alongside experience from implementing image manipulation in 
+                     this course and Memorial’s Visual Computing and Applications course. A project presentation video is viewable below.
+                        </p>
+                        <!-- LINK BOXES -->
+                        <div class="projectLinkContainer">
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=iXh9LbbXTRk'">
+                                <p id="projectLinkText">Presentation Video</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DATA -->
+            <div class="projectBox" id="data">
+                <!-- TITLE AND SUBTILE -->
+                <div class="projectTitleContainer">
+                    <p id="projectTitleText">Data Manipulation</p>
+                    <p id="projectSubtitleText">Data Preprocessing Techniques & Data Visualization Final Projects</p>
+                </div>
+                <!-- PROJECT BODY -->
+                <div class="projectBodyContainer">
+                    <!-- IMAGE AREA -->
+                    <div class="projectLeftContainer">
+                        <div class="arrowLeft" onclick="backward('data')"></div>
+                        <img class="projectImg" src="resources/data/0.png"></img>
+                        <div class="arrowRight" onclick="forward('data')"></div>
+                    </div>
+                    <!-- TEXT AREA -->
+                    <div class="projectRightContainer">
+                        <p id="projectDescriptionText">
+                            Throughout my degree I did a number of courses on data preprocessing and visualization. These courses helped
+                             me gain experience using key data libraries for Python, such as Pandas, Matplotlib, NumPy and scikit-learn.
+                              I learned how to clean, encode and scale data to use for either machine learning problems or plotting and 
+                              analyzing the data itself. Final project presentations from courses on data preprocessing and data 
+                              visualization respectively are viewable below. 
+                        </p>
+                        <!-- LINK BOXES -->
+                        <div class="projectLinkContainer">
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=xc2l92JIlHg'">
+                                <p id="projectLinkText">Preprocessing Presentation</p>
+                            </div>
+                            <div class="projectLinkBox" onclick="location.href='https://www.youtube.com/watch?v=DmUh5iPorzk'">
+                                <p id="projectLinkText">Visualization Presentation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </body>
 </html>
